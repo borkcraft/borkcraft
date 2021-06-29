@@ -14,6 +14,9 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
+# Docker
+get-docker.sh
+
 # Geekbench
 Geekbench-5.2.2-Linux*
 Geekbench-5.2.2-Linux/
