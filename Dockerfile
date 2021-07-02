@@ -1,6 +1,6 @@
- # syntax=docker/dockerfile:1
- FROM ubuntu
- RUN ./install_java.sh
- WORKDIR /borkcraft
- COPY . .
- CMD ["./run.sh"]
+FROM ubuntu
+WORKDIR /borkcraft
+COPY . .
+RUN ./scripts/install_java.sh
+RUN ./scripts/init_server.sh
+CMD ["./scripts/run.sh"]
