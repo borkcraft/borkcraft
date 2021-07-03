@@ -1,6 +1,9 @@
 #!/bin/bash
 
-docker build . -t borkcraft
+image="borkcraft"
+container="borkcraft"
+
+docker build . -t $image --no-cache
 
 docker run \
 	-d \
@@ -11,8 +14,8 @@ docker run \
 	-p 25575:25575/tcp \
 	-e RCON_PASSWORD="$RCON_PASSWORD" \
 	-e LEVEL_SEED="-7672362719859801980" \
-	--name borkcraft \
+	--name $container \
 	--restart unless-stopped \
-	--no-cache \
-	borkcraft
+	$image
 
+docker logs -f $image
