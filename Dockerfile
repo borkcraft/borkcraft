@@ -1,6 +1,7 @@
 FROM ubuntu
 WORKDIR /borkcraft
-COPY . .
-RUN ./scripts/install_java.sh
-RUN ./scripts/init_server.sh
-CMD ["./scripts/run.sh"]
+COPY . . 
+RUN ./scripts/install_deps.sh
+RUN ./install.sh
+WORKDIR /borkcraft/server
+CMD ["./run.sh"]

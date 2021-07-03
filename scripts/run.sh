@@ -1,7 +1,14 @@
 #!/bin/bash
+#
+#
+# $LEVEL_SEED
 set -e
+self_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # set seed
-./set_config.sh 'server.properties' 'level-seed' "$1"
+if [[ -z $LEVEL_SEED ]]; then
+	"./set_config.sh" "server.properties" 'level-seed' "$LEVEL_SEED"
+fi
 
-exec java -Xms3584m -Xmx3584m -jar server.jar --nogui
+# run the server
+exec java -Xms3584m -Xmx3584m -jar "./fabric_server.jar" --nogui

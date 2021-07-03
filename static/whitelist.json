@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "uuid": "455d2874-529a-46fd-a5a2-a1c34f3ed212",
+    "name": "ReiLark",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]
