@@ -6,8 +6,13 @@ set -e
 self_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # set seed
-if [[ -z $LEVEL_SEED ]]; then
+if [[ ! -z $LEVEL_SEED ]]; then
 	"./set_config.sh" "server.properties" 'level-seed' "$LEVEL_SEED"
+fi
+
+if [[ ! -z $RCON_PASSWORD ]]; then
+	"./set_config.sh" "server.properties" 'enable-rcon' "true"
+        "./set_config.sh" "server.properties" 'rcon.password' "$RCON_PASSWORD"
 fi
 
 # run the server

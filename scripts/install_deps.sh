@@ -4,4 +4,4 @@ set -e
 apt-get update -y
 
 # java
-apt-get install openjdk-16-jre -y
+apt-get install openjdk-16-jre wget -y
